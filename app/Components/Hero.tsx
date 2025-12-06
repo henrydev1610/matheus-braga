@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="relative z-10 px-4">
-        <h1 className="text-5xl font-bold uppercase">Transforme neu negócio <br/> com tecnologia</h1>
+        <h1 className="text-5xl font-bold uppercase">Transforme seu negócio <br/> com tecnologia</h1>
         <p className="mt-4 text-lg">soluções automatizadas para aumentar vendas otimizar o seu tempo.</p>
 
         <button className="py-4 px-20 my-10 rounded-full bg-blue-400 transition-colors duration-300 hover:bg-blue-300 font-bold cursor-pointer">Saiba mais</button>

@@ -5,7 +5,7 @@ import Partners from './Components/Partners'
 import Transform from './Components/Transform'
 const page = () => {
   return (
-    <div>    
+    <div className='overflow-x-hidden'>    
       <Hero/>
       <About/>
       <Services/>
@@ -14,5 +14,5 @@ const page = () => {
     </div>
   )
 }
-
+// https://victorcaetano.tech/
 export default page

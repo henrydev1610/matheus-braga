@@ -1,177 +1,71 @@
-import React from 'react'
-import Image from 'next/image'
+"use client";
 
-const Partners = () => {
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+const logos = [
+  "/notion.png",
+  "/bluehost.png",
+  "/banco-do.png",
+  "/btg.png",
+  "/bancoOriginal.png",
+  "/digitalOcean.png",
+  "/obsidian.png",
+  "/microsoft.png",
+  "/rbr.png",
+   "/bancoOriginal.png",
+  "/digitalOcean.png",
+  "/hostinger.png",
+
+ 
+];
+
+
+const marqueeLogos = [...logos, ...logos, ...logos];
+
+const Partners: React.FC = () => {
   return (
-    <div className="w-full py-20">
-      <section className="container mx-auto flex flex-col items-center">
+    <div className="w-screen pb-[10rem] py-20 bg-background">
+      {/* Título */}
+      <section className="max-w-6xl mx-auto flex flex-col items-center px-4">
+        <h1 className="text-4xl sm:text-5xl  font-bold text-center">
+          Parcerias &amp; Tecnologias
+        </h1>
 
-        <h1 className="text-5xl font-bold text-center">Parcerias & Tecnologias</h1>
-
-        <p className="text-center my-5">
-          Ferramentas homologadas pela Henry-dev
+        <p className="text-center my-5 font-medium text-muted-foreground">
+          Empresas homologadas pela Henry-dev
         </p>
-
-        {/* GRID DE LOGOS */}
-        <div className="
-          grid 
-          grid-cols-2 
-          sm:grid-cols-3 
-          md:grid-cols-4 
-          lg:grid-cols-6 
-          gap-10 
-          items-center 
-          justify-items-center
-          mt-10
-        ">
-
-          {/* LOGO 1 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-
-          {/* LOGO 2 */}
-          <Image
-            src="/bluehost.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-20 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-
-          {/* LOGO 3 */}
-          <Image
-            src="/banco-do.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-
-          {/* LOGO 4 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-
-          {/* LOGO 5 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-          {/* LOGO 6 */}
-          <Image
-            src="/notion.png"
-            width={1200}
-            height={800}
-            alt="logo"
-            className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
-          />
-
-        </div>
-
       </section>
-    </div>
-  )
-}
 
-export default Partners
+      {/* CARROSSEL INFINITO */}
+      <div className="relative w-screen select-none overflow-hidden mt-10 px-10">
+        <motion.div
+          className="flex items-center gap-16 min-w-max"
+          // começa em 0 e vai até -1/3 da largura total do track [A][A][A]
+          animate={{ x: ["0%", "-33.3333%"] }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 25, // controla a velocidade
+            ease: "linear",
+          }}
+        >
+          {marqueeLogos.map((src, index) => (
+            <div key={index} className="shrink-0 flex justify-center">
+              <Image
+                src={src}
+                width={200}
+                height={80}
+                alt={`logo-${index}`}
+                className="h-14 w-auto object-contain opacity-90 hover:opacity-100 transition"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default Partners;
